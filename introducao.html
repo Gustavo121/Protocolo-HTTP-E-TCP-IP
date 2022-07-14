@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução</title>
+</head>
+<body>
+    Navegador -> Request 'protocolo IP' é responsavel pelo caminho ate o -> [Servidor] -> Response 'TCP retorna os dados ate o' -> Navegador
+Basicamente seu navegador faz uma requisição(request) para um API 
+e a API te devolve uma resposta(response)
+
+IP - garante que as informações que sai do seu navegador cheguem ao servidor, sabendo onde tudo deve ir.
+TCP- garante que o html de retorno seja quebrado em pacotes e retorne tudo para você no navegador em ordem. Se falta algo ele busca e retorna denovo.
+
+
+Navegador
+Camadas:
+
+Aplicação - protocolos que rodam nessa camada: HTTP SMTP DACP FTP.  É a camada do software, programas.
+
+Transporte - protocolos principais dessa camada: TCP UDP. cuida de como seus dados chegam para servidor => cliente / cliente => servidor, garante que tudo esteja em ordem sem perca de informações
+
+Rede - protocolo IP: garante e define que a informação chegue onde você quer
+
+Hardware - a menssagem chega vira sinais eletronicos, envidas atraves dos cabos para chegar ao destino.
+
+
+Servidor
+Camadas:
+
+São as mesmas, a informação saindo do navegador passa por todas as camadas, cai na internet, assim passa pelas camadas denovo porém agora do servidor até chegar ao destino final. O Servidor 
+</body>
+</html>
