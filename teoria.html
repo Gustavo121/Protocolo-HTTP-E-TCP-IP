@@ -47,16 +47,106 @@
     POST /contato HTTP/1.1
 
 
-
+_____________________________________________________________________________________________________________________________________________
 
     
 
     Cabeçalhos gerais -
 
+    DATE | PRAGMA | CACHE-CONTOL |
+    CONNECTION | TRAILER | TRANSFER-ENCODING |
+    UPGRADE | VIA | WARNING
+
+    DATE = data, hora , momento que foi gerada a menssagem
+    CACHE-CONTRO = tem varios valores para controlar o cache do recurso
+    VIA = no caminho da resposta do servidor ele preenche o header
+    
+    Exemplos:
+
+    DATE: Sat, 13 Apr 2019 23:45:05 GMT
+    CACHE-CONTROL: no-cache
+    CONNECTION: keep-alive
+
+
+
+______________________________________________________________________________________________________________________________________________
+
+
+
     Cabeçalhos de pedido -
+
+    *Preferência de resposta
+
+    ACCEPT | ACCEPT-CHARSET | ACCEPT-ENCODING
+    ACCEPT-LANGUAGE | TE
+
+    ACCEPT = aqui você diz a preferencia ( html, json, image. qual formato!) o servidor atente a varios clientes diferentes, usando browser, linha de comando. assim ele se adapta a cada um.
+    ACCEPT-LANGUAGE = a google atende a varios paises assim você pode pedir em varias linguagens (conteudo em frances utiliza FR)
+
+
+    *Informações Enviada com Pedido
+
+    AUTHORIZATION | FROM | REFERER | USER-AGENT
+
+    USER-AGENT = consigo enviar qual foi o cliente que fez o pedido, qual navegador partiu aquela requisição
+    AUTHORIZATION = trabalha com autorização de usuario, token de acesso desse usuario ou recurso no servidor
+
+
+    *Pedido Condiconal
+
+    PROXY-AUTHORIZATION | IF-MODIFIED-SINCE | 
+    IF-MATCH | IF-NONE-MATCH | IF-UNMODIFIED-SINCE |
+    IF-RANGE
+
+    IF-MODIFIED-SINCE = você passa uma condicional para o servidor. EX. você passa uma data, o servidor verifica se precisa gerar um novo recurso com a data passada, se sim, ele gera.
+
+
+    *Restrição no servidor
+
+    EXPECT | HOST | MAX-FORWARDS | RANGE
+
+    HOST = é sempre obrigatorio, se caso você quer acessar o google, programdor a bordo... outro site
+
+
+    Exemplos:
+
+    ACCEPT-LANGUAGE: pt-br
+    HOST: localhost:3001
+    USER-AGENT: Mozilla
+
+
+    _____________________________________________________________________________________________________________________________________________
 
     Cabeçalhos de entidade -
 
-    Entidade/Recurso -
+    ALOW | CONTENT-ENCODING | CONTENT-LENGTH |
+    CONTENT-TYPE | EXPIRES | LAST-MODIFIED |
+    CONTENT-LANGUAGE | CONTENT-LOCATION |
+    CONTENT-MD5 | CONTENT-RANGE
+
+    CONTENT-TYPE = indentifica o tipo de conteudo que estou enviando para o servidor, especificando qual formato. ex. arquivo json
+    CONTENT-LANGUAGE = posso diser qual a linguagem do recurso que estou mandando para o servidor
+
+    Exemplos:
+    CONTENT-TYPE: text/html
+    CONTENT-LENGTH: 50
+
+
+
+    Entidade/Recurso - nenhum
+
+
+    _____________________________________________________________________________________________________________________________________________
+
+    Mensagem HTTP final
+
+    GET / HTTP/1.1
+    Date:
+    Cache-control: no-cache
+    Connection: keep-alive
+    Accept-language: pt-br
+    Host: http://localhost:3001
+    User-Agent: Mozilla
+    Accept: text/html
 </body>
 </html>
