@@ -1,0 +1,98 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP - Teoria: Response</title>
+</head>
+<body>
+    Response:
+
+    Linha de status - 
+
+    Versão HTTP ex. HTTP/1.1
+    Némero do Status ex. 200 ok; 201 created; 202 accepted; 304 not modified; 404 not found; 500 internal server error;
+    Mensagem do status ex. ex. 200 ok; 201 created; 202 accepted; 304 not modified; 404 not found; 500 internal server error;
+
+    Resposta ex. acima *  HTTP/1.1 200 OK
+
+
+    _____________________________________________________________________________________________________________________________________________
+
+    Cabeçalhos gerais - 
+
+    DATE | PRAGMA | CACHE-CONTOL |
+    CONNECTION | TRAILER | TRANSFER-ENCODING |
+    UPGRADE | VIA | WARNING
+
+    Exemplos:
+
+    DATE: Sat, 13 Apr 2019 23:45:05 GMT
+    CACHE-CONTROL: no-cache
+    CONNECTION: keep-alive
+
+    _____________________________________________________________________________________________________________________________________________
+
+    Cabeçalhos de resposta - 
+
+    *Redirecionamento
+
+    Location - efetua redirecionamentos, ex. entra no google, http acessado ele vai para outra location https... assim vai redirecionando.
+    
+
+    *Informação
+
+    SERVER | RETRY-AFTER | ACCEPT-RANGES
+
+    SERVER - aqui diz qual foi a aplicação, software que gerou aquela resposta
+
+
+    *Segurança
+
+    WWWW-AUTHENTICATE | PROXY-AUTHENTICATE |
+
+
+    *Cache
+
+    ETAG | AGE | VARY
+
+
+    Exemplos:
+
+    Server: nginx
+
+_____________________________________________________________________________________________________________________________________________
+
+
+    Cabeçalhos de entidade - 
+
+    ALOW | CONTENT-ENCODING | CONTENT-LENGTH |
+    CONTENT-TYPE | EXPIRES | LAST-MODIFIED |
+    CONTENT-LANGUAGE | CONTENT-LOCATION |
+    CONTENT-MD5 | CONTENT-RANGE
+
+    Exemplos:
+
+    CONTENT-TYPE: application/json
+
+    Entidade/Recurso -
+
+    {"name":"Ayrton","email":
+    "programadorabordo@gmail.com"}
+
+
+_____________________________________________________________________________________________________________________________________________
+
+Mensagem HTTP
+
+HTTP/1.1 200 OK
+Date: Sat, 13 Apr 2019 23:45:05 GMT
+Cache-control: no-cache
+Connection: keep-alive
+Server: nginx
+Content-type: application/json
+
+{"name":"Ayrton","email":
+"programadorabordo@gmail.com"}
+</body>
+</html>
