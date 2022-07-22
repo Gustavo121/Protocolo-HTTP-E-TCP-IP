@@ -5,7 +5,16 @@ const srv = http.createServer((req, res) => { // dois parametros request e respo
     console.log('HEADERS: ', req.headers);
     console.log('HTTP VERSÃO: ', req.httpsVersion);
 
-    res.writeHead(200, {
+    if (req.method === "POST") {
+        res.whiteHead(201, {
+            'Content-type': 'application/json'
+        })
+
+        res.write('{"message": Cadastro efetuado com sucesso!"}')
+    }
+
+    if (req.method === "GET") {
+        res.writeHead(200, {
         'Content-Type': 'text/html'
     })
 
@@ -24,6 +33,7 @@ const srv = http.createServer((req, res) => { // dois parametros request e respo
     </html>
     `)
     res.end()
+}
 });
 
 srv.listen(3001, () => {
